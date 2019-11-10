@@ -3,6 +3,15 @@
 }
 
 .App-Widget {
-  background: yellow;
+  background: #6ce4af;
   padding: 10px;
+}
+
+.App-Counter {
+  background: #24a0f1;
+  padding: 10px;
+}
+
+.mb16 {
+  margin-bottom: 16px;
 }

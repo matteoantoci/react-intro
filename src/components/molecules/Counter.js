@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 export const Counter = ({ count, onClick }) =>
   (
-    <div>
+    <div className="App-Counter mb16">
       <div>This is a counter molecule</div>
       <Button onClick={onClick}>
         {`User clicked ${count} times`}
