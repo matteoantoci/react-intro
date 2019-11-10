@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {StoreProvider} from "./store/store";
+import {INITIAL_STATE, REDUCER} from "./store/reducer";
+import {Widget} from "./components/organisms/Widget";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+// Store middleware
+const withLogging = reducer => (state, action) => {
+    console.log(`Processing ${action.type} action!`);
+    return reducer(state, action);
+};
 
-export default App;
+export const App = () =>
+    (
+        <StoreProvider initialState={INITIAL_STATE} reducer={withLogging(REDUCER)}>
+            <div className="App">
+                <Widget/>
+            </div>
+        </StoreProvider>
+    );
