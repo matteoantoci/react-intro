@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter renders correctly 1`] = `
+<div
+  className="App-Counter mb16"
+>
+  <div>
+    This is a counter molecule
+  </div>
+  <button
+    onClick={[Function]}
+  >
+    User clicked 999 times
+  </button>
+</div>
+`;

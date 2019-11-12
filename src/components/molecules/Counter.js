@@ -6,7 +6,7 @@ export const Counter = ({ count, onClick, ...props }) =>
   (
     <div className="App-Counter mb16" {...props}>
       <div>This is a counter molecule</div>
-      <Button onClick={onClick}>
+      <Button onClick={onClick} data-testid="counter-button">
         {`User clicked ${count} times`}
       </Button>
     </div>

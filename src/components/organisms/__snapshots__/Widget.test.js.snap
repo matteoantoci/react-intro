@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Widget renders correctly 1`] = `
+<div
+  className="App-Widget mb16"
+>
+  <div
+    className="mb16"
+  >
+    Here is my widget!
+  </div>
+  <div
+    className="App-Counter mb16"
+  >
+    <div>
+      This is a counter molecule
+    </div>
+    <button
+      onClick={[Function]}
+    >
+      User clicked 999 times
+    </button>
+  </div>
+  <div>
+    I can see widget state too: 999
+  </div>
+</div>
+`;
