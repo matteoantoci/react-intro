@@ -1,4 +1,4 @@
-import {COUNTER_BUTTON_CLICKED} from "./actions";
+import {COUNTER_BUTTON_CLICK} from "./actions";
 import {createReducer} from "./store";
 
 export const INITIAL_STATE = {
@@ -6,7 +6,7 @@ export const INITIAL_STATE = {
 };
 
 export const reducers = {
-  [COUNTER_BUTTON_CLICKED]: (state, action) => ({
+  [COUNTER_BUTTON_CLICK]: (state, action) => ({
     ...state,
     count: state.count + 1,
   }),

@@ -1,20 +1,19 @@
-import React from 'react';
+import React, {useReducer} from 'react';
 import './App.css';
-import {StoreProvider} from "./store/store";
 import {INITIAL_STATE, REDUCER} from "./store/reducer";
 import {Widget} from "./components/organisms/Widget";
+import {counterButtonClick} from "./store/actions";
+import {withLogging} from "./store/store";
 
-// Store middleware
-const withLogging = reducer => (state, action) => {
-    console.log(`Processing ${action.type} action!`);
-    return reducer(state, action);
+const reducer = withLogging(REDUCER);
+
+export const App = () => {
+  const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
+  const { count } = state;
+  const handleIncrement = () => dispatch(counterButtonClick());
+  return (
+    <div className="App">
+      <Widget count={count} handleIncrement={handleIncrement} />
+    </div>
+  );
 };
-
-export const App = () =>
-    (
-        <StoreProvider initialState={INITIAL_STATE} reducer={withLogging(REDUCER)}>
-            <div className="App">
-                <Widget/>
-            </div>
-        </StoreProvider>
-    );

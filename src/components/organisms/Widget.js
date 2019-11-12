@@ -1,17 +1,17 @@
 import React from 'react';
-import {useStore} from "../../store/store";
-import {counterButtonClick} from "../../store/actions";
 import {Counter} from "../molecules/Counter";
+import PropTypes from "prop-types";
 
-export const Widget = () => {
-  const { state, dispatch } = useStore();
-  const { count } = state;
-  const handleIncrement = () => dispatch(counterButtonClick());
-  return (
-    <div className="App-Widget mb16">
+export const Widget = ({ count, handleIncrement, ...props }) =>
+  (
+    <div className="App-Widget mb16" {...props}>
       <div className="mb16">Here is my widget!</div>
-      <Counter count={count} onClick={handleIncrement} />
+      <Counter count={count} onClick={handleIncrement}/>
       <div>{`I can see widget state too: ${count}`}</div>
     </div>
   );
+
+Widget.propTypes = {
+  count: PropTypes.number.isRequired,
+  handleIncrement: PropTypes.func.isRequired,
 };
