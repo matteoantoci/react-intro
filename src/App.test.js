@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { render, fireEvent } from '@testing-library/react'
 import { App } from './App';
 
-describe('App', () => {
+describe('<App />', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(<App />, div);
@@ -17,7 +17,7 @@ describe('App', () => {
 
       fireEvent.click(button);
 
-      expect(button.innerHTML).toBe('User clicked 1 times');
+      expect(button).toHaveTextContent('User clicked 1 times');
     });
   })
 });

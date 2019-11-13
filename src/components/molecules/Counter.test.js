@@ -2,7 +2,7 @@ import React from "react";
 import { Counter } from './Counter'
 import renderer from 'react-test-renderer';
 
-describe('Counter', () => {
+describe('<Counter />', () => {
   it('renders correctly', () => {
     const count = 999;
     const fakeCallback = () => {};

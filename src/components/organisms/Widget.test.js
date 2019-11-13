@@ -2,7 +2,7 @@ import React from "react";
 import { Widget } from './Widget'
 import renderer from 'react-test-renderer';
 
-describe('Widget', () => {
+describe('<Widget />', () => {
   it('renders correctly', () => {
     const count = 999;
     const fakeCallback = () => {};
